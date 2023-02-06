@@ -10,4 +10,4 @@ comm="${firstLine},${lastLine}p;${nextLastLine}q"
 msg=$(sed -n $comm $filename)
 echo $msg
 
-curl -X POST https://textbelt.com/text --data-urlencode phone=$1 --data-urlencode message=$msg -d key=textbelt
+curl http://textbelt.com/text -d number=$1 -d "message=$msg" -d key=textbelt
