@@ -3,7 +3,7 @@ url="https://forecast.weather.gov/MapClick.php?lat=39.9522&lon=-75.1622#.Y9fwF-z
 filename="scrape.txt"
 curl -s $url | pandoc -f html -t plain > $filename
 firstLine=$(grep -n "Extended Forecast" $filename | cut -d : -f 1)
-lastLine=$(($firstLine + 12)) 
+lastLine=$(($firstLine + 6)) 
 nextLastLine=$(($lastLine + 1)) 
 comm="${firstLine},${lastLine}p;${nextLastLine}q"
 
